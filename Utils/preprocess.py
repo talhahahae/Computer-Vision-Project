@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from tqdm import tqdm
 
 # Config
-DATASET_DIR = "../DummyData"
+DATASET_DIR = "../Data"
 SAVE_DIR = "../PreProcessedData"
 SLICE_AXIS = 2  # axial slices
 IMAGE_SHAPE = (128, 128)  # resize target, optional
