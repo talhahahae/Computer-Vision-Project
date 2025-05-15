@@ -9,7 +9,7 @@ from skimage.util import random_noise
 SOURCE_DIR = "PreProcessedData/test"
 OUTPUT_DIR = "PreProcessedData/synthetic_test"
 LABEL_FILE = "PreProcessedData/test_labels.npy"
-ANOMALY_RATIO = 0.3  # e.g., 30% of images are anomalous
+ANOMALY_RATIO = 0.3
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
