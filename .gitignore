@@ -3,3 +3,4 @@ PreProcessedData
 *.tar
 *.pdf
 DummyData
+__pycache__
