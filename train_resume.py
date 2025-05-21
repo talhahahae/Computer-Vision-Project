@@ -10,14 +10,14 @@ def train_model(model, train_loader, device, epochs, model_idx, log_writer=None)
     criterion = torch.nn.MSELoss()
     start_epoch = 0
 
-    # 🧠 Resume from checkpoint if available
+    # Resume from checkpoint if available
     if os.path.exists(state_path):
         print(f"🔁 Resuming training for model_{model_idx}...")
         checkpoint = torch.load(state_path)
         model.load_state_dict(torch.load(checkpoint_path))
         optimizer.load_state_dict(checkpoint["optimizer_state"])
         start_epoch = checkpoint["epoch"] + 1
-        print(f"✅ Resumed from epoch {start_epoch}")
+        print(f" Resumed from epoch {start_epoch}")
 
     for epoch in range(start_epoch, epochs):
         model.train()
@@ -38,7 +38,7 @@ def train_model(model, train_loader, device, epochs, model_idx, log_writer=None)
         if log_writer:
             log_writer.add_scalar(f"Train/Loss_Model_{model_idx}", avg_loss, epoch)
 
-        # ✅ Save model and state after each epoch
+        # Save model and state after each epoch
         torch.save(model.state_dict(), checkpoint_path)
         torch.save({
             "epoch": epoch,
